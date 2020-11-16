@@ -1,4 +1,7 @@
 <html>
+<form action="https://potato2017.github.io/">
+<button type="submit">Back</button>
+</form>
 <p class=topTitle>Dash</p>
 <p class=score>Score: <span id=score></span></p>
 <p class=level>Level: <span id=level></span></p>
