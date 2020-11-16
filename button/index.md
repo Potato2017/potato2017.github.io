@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <button type="button" onclick="updateCount()">Click</button>
 <button type="button" onclick="buyFirst()" id="first">Increment +1 (50 money)</button>
