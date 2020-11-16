@@ -59,6 +59,11 @@ function drawStart() {
   levelTwoDone = false;
   levelThreeDone = false;
   levelFourDone = false;
+  levelFiveDone = false;
+  levelSixDone = false;
+  levelSevenDone = false;
+  levelEightDone = false;
+  levelNineDone = false;
   scrollSpeed = 1;
   ctx.font = "25px Courier New";
   ctx.fillText('Press "a" to start', 10, 25);
@@ -101,6 +106,31 @@ function updateFrames() {
     scrollSpeed ++;
     levelFourDone = true;
     level = 5;
+  }
+  if (score == 150 && !levelFiveDone) {
+    scrollSpeed ++;
+    levelFiveDone = true;
+    level = 6;
+  }
+  if (score == 200 && !levelSixDone) {
+    scrollSpeed ++;
+    levelSixDone = true;
+    level = 7;
+  }
+  if (score == 250 && !levelSevenDone) {
+    scrollSpeed ++;
+    levelSevenDone = true;
+    level = 8;
+  }
+  if (score == 500 && !levelEightDone) {
+    scrollSpeed ++;
+    levelEightDone = true;
+    level = 9;
+  }
+  if (score == 1000 && !levelNineDone) {
+    scrollSpeed ++;
+    levelNineDone = true;
+    level = 10;
   }
   document.getElementById("score").innerHTML = score;
   document.getElementById("level").innerHTML = level;
