@@ -1,4 +1,7 @@
 <html>
+<form action="https://potato2017.github.io/">
+<button type="submit">Back</button>
+</form>
 <button type="button" onclick="updateCount()">Click</button>
 <button type="button" onclick="buyFirst()" id="first">Increment +1 (50 money)</button>
 <button type="button" onclick="buySecond()" id="second">Increment +1 (250 money)</button>
