@@ -42,6 +42,11 @@ var levelTwoDone = false;
 var levelThreeDone = false;
 var levelFourDone = false;
 var scrollSpeed = 1;
+var levelFiveDone = false;
+var levelSixDone = false;
+var levelSevenDone = false;
+var levelEightDone = false;
+var levelNineDone = false;
 var yVel = 0;
 window.setInterval(update, 10);
 var player = {x: 100, y: groundLevel - 20};
@@ -181,9 +186,8 @@ function spawnObstacle() {
     height: Math.floor(Math.random() * 100)
   };
   obstacles.push(obstacle);
-  spawnerCoolDown = 100 + Math.floor(Math.random() * 50)/Math.pow(scrollSpeed,2);
+  spawnerCoolDown = Math.floor(Math.random() * 50)/Math.pow(scrollSpeed,2);
 }
-
 function drawObstacles() {
   for (var i = 0; i < obstacles.length; i+=1) {
     var obstacle = obstacles[i]; // add var
