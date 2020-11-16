@@ -186,7 +186,7 @@ function spawnObstacle() {
     height: Math.floor(Math.random() * 100)
   };
   obstacles.push(obstacle);
-  spawnerCoolDown = Math.floor(Math.random() * 50)/Math.pow(scrollSpeed,2);
+  spawnerCoolDown = 100 + Math.floor(Math.random() * 50)/Math.pow(scrollSpeed,2);
 }
 function drawObstacles() {
   for (var i = 0; i < obstacles.length; i+=1) {
