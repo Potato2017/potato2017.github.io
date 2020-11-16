@@ -1,4 +1,7 @@
 <html>
+<form action="https://potato2017.github.io/">
+<button type="submit">Back</button>
+</form>
 <p class=topTitle>Avoid</p>
 <p class=score>Score: <span id=score></span></p>
 <p class=level>Level: <span id=level></span></p>
@@ -30,6 +33,7 @@
 }
 </style>
 <script>
+console.log("This game is still in the development phase! There are bound to be bugs!");
 var canvas = document.getElementById("Game");
 ctx = canvas.getContext("2d");
 var obstacles = [];
