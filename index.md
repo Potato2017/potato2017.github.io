@@ -7,5 +7,8 @@
 <form action="https://potato2017.github.io/dash">
 <button type="submit">Dash</button>
 </form>
+<form action="https://potato2017.github.io/avoid">
+<button type="submit">Avoid</button>
+</form>
 </body>
 </html>
