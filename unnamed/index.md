@@ -23,5 +23,5 @@
     </div>
   </body>
   <p>MAKE SURE TO PRESS DOWNLOAD THIS FILE, NOT START NOW. PRESSING START NOW WILL PROBABLY GIVE YOU A VIRUS<p>
-  <a href="/download/New_Unity_Project_1.zip">windows download</a>
+  <a href="/unnamed/download/New_Unity_Project_1.zip">windows download</a>
 </html>
