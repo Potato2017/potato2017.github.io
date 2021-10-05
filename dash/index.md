@@ -196,7 +196,7 @@ function drawObstacles() {
     var obstacle = obstacles[i]; // add var
     ctx.beginPath();
     ctx.rect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
-    ctx.fillStyle = "lime";
+    ctx.fillStyle = "red";
     ctx.fill();
   }
 }
@@ -207,7 +207,7 @@ function drawBackground() {
   ctx.fill();
   ctx.beginPath();
   ctx.rect(0, groundLevel, canvas.width, canvas.height);
-  ctx.fillStyle = "lime"; //ground
+  ctx.fillStyle = "black"; //ground
   ctx.fill();
 }
 
