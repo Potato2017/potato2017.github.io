@@ -184,9 +184,9 @@ function spawnObstacle() {
   //spawn an obstacle
   var obstacle = {
     x: canvas.width,
-    y: Math.floor(Math.random() * (canvas.height)),
+    y: Math.floor(Math.random() * (canvas.height-70)),
     width: 20,
-    height: Math.floor(Math.random() * 100)
+    height: Math.floor(Math.random() * 50)+50
   };
   obstacles.push(obstacle);
   spawnerCoolDown = 100 + Math.floor(Math.random() * 50)/Math.pow(scrollSpeed,2);
