@@ -174,7 +174,7 @@ function updateFrames() {
 }
 function drawPlayer(){
   player.y += yVel
-  ctx.fillStyle = "black";
+  ctx.fillStyle = "lime";
   ctx.fillRect(player.x, player.y, 20, 20);
   if (yVel < 10) {
   yVel+=0.2;
