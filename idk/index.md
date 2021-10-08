@@ -52,7 +52,7 @@ function update() {
     for(var i = 0; i < 4; i++) {
         potatoes += amts[i]*perFrame[i];
     }
-    document.getElementById("potatoes").innerHTML = money;
+    document.getElementById("potatoes").innerHTML = potatoes;
     document.getElementById("price1").innerHTML = prices[0];
     document.getElementById("price2").innerHTML = prices[1];
     document.getElementById("price3").innerHTML = prices[2];
