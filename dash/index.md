@@ -164,6 +164,7 @@ function updateFrames() {
   }
   if (player.y + 20 >= groundLevel) {
     player.y = groundLevel - 40;
+    yVel = 0;
   }
   if (player.x < 0) {
     player.x = 0;
