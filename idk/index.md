@@ -97,10 +97,14 @@ function update() {
     for(var i = 0; i < 4; i++) {
         potatoes += amt[i]*perFrame[i];
     }
-    if (potatoes >= prices[0]) document.getElementById("farmer").style.backgroundColor = "#4CAF50"
-    if (potatoes >= prices[1]) document.getElementById("tractor").style.backgroundColor = "#4CAF50"
-    if (potatoes >= prices[2]) document.getElementById("farmmanager").style.backgroundColor = "#4CAF50"
-    if (potatoes >= prices[3]) document.getElementById("potatopeeler").style.backgroundColor = "#4CAF50"
+    if (potatoes >= prices[0]) document.getElementById("farmer").style.backgroundColor = "#4CAF50";
+    else document.getElementById("farmer").style.backgroundColor = "white";
+    if (potatoes >= prices[1]) document.getElementById("tractor").style.backgroundColor = "#4CAF50";
+    else document.getElementById("tractor").style.backgroundColor = "white";
+    if (potatoes >= prices[2]) document.getElementById("farmmanager").style.backgroundColor = "#4CAF50";
+    else document.getElementById("farmmanager").style.backgroundColor = "white";
+    if (potatoes >= prices[3]) document.getElementById("potatopeeler").style.backgroundColor = "#4CAF50";
+    else document.getElementById("potatopeeler").style.backgroundColor = "white";
     document.getElementById("potatoes").innerHTML = Math.round(potatoes);
     document.getElementById("price1").innerHTML = Math.round(prices[0]);
     document.getElementById("price2").innerHTML = Math.round(prices[1]);
