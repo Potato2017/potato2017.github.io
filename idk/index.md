@@ -4,6 +4,7 @@
 </form>
 <p class=topTitle>idk</p>
 <p class=potatoes><span id=potatoes></span> potatoes grown</p>
+<p class=pps><span id=pps></span> potatoes per second</p>
 <button type="button" onclick="farm()">Farm</button>
 <button type="button" onclick="farmer()" id="farmer">Farmer $<span id=price1></span></button>
 <button type="button" onclick="tractor()" id="tractor">Tractor $<span id=price2></span></button>
@@ -21,6 +22,11 @@
   font-family: "Courier New";
   font-size: 25px;
 }
+.pps{
+  text-align: center;
+  font-family: "Courier New";
+  font-size: 5px;
+}
 </style>
 <script>
 var potatoes = 0;
@@ -28,7 +34,8 @@ var farmVal = 1;
 var amts = [0,0,0,0];
 var prices = [10,100,1000,10000];
 var perFrame = [0.05,0.6,5,40];
-window.setInterval(update,10);
+const updateRate = 10
+window.setInterval(update,updateRate);
 var farm = function() {
     potatoes += farmVal;
 }
@@ -65,5 +72,6 @@ function update() {
     document.getElementById("price2").innerHTML = Math.round(prices[1]);
     document.getElementById("price3").innerHTML = Math.round(prices[2]);
     document.getElementById("price4").innerHTML = Math.round(prices[3]);
+    document.getElementById("pps").innerHTML = Math.round(1000 / updateRate * (perFrame[0] + perFrame[1] + perFrame[2] + perFrame[3]));
 }
 </script>
