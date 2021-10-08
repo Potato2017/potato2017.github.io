@@ -90,7 +90,7 @@ window.onkeydown = function() {
     yVel = -4;
   }
 }
-var spawnerCoolDown = 30/Math.pow(scrollSpeed,2);
+var spawnerCoolDown = 30/scrollSpeed;
 function updateFrames() {
   drawBackground();
   drawObstacles();
@@ -190,7 +190,7 @@ function spawnObstacle() {
     height: Math.floor(Math.random() * 50)+50
   };
   obstacles.push(obstacle);
-  spawnerCoolDown = Math.floor(Math.random() * 50)/Math.pow(scrollSpeed,2);
+  spawnerCoolDown = 30/scrollSpeed;
 }
 function drawObstacles() {
   for (var i = 0; i < obstacles.length; i+=1) {
