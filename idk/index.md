@@ -31,7 +31,7 @@
 <script>
 var potatoes = 0;
 var farmVal = 1;
-var amts = [0,0,0,0];
+var amt = [0,0,0,0];
 var prices = [10,100,1000,10000];
 var perFrame = [0.05,0.6,5,40];
 const updateRate = 10
@@ -42,30 +42,30 @@ var farm = function() {
 var farmer = function() {
     if (potatoes < prices[0]) return;
     potatoes -= prices[0]
-    amts[0]++;
+    amt[0]++;
     prices[0]*=1.2;
 }
 var tractor = function() {
     if (potatoes < prices[1]) return;
     potatoes -= prices[1]
-    amts[1]++;
+    amt[1]++;
     prices[1]*=1.2;
 }
 var farmmanager = function() {
     if (potatoes < prices[2]) return;
     potatoes -= prices[2]
-    amts[2]++;
+    amt[2]++;
     prices[2]*=1.2;
 }
 var potatopeeler = function() {
     if (potatoes < prices[3]) return;
     potatoes -= prices[3]
-    amts[3]++;
+    amt[3]++;
     prices[3]*=1.2;
 }
 function update() {
     for(var i = 0; i < 4; i++) {
-        potatoes += amts[i]*perFrame[i];
+        potatoes += amt[i]*perFrame[i];
     }
     document.getElementById("potatoes").innerHTML = Math.round(potatoes);
     document.getElementById("price1").innerHTML = Math.round(prices[0]);
