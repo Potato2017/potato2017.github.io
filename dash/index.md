@@ -5,6 +5,7 @@
 <p class=topTitle>Dash</p>
 <p class=score>Score: <span id=score></span></p>
 <p class=level>Level: <span id=level></span></p>
+<p class=avoided>Avoided: <span id=avoided></span></p>
 <canvas id="Game" width="1000" height="300"></canvas>
 </html>
 <style>
@@ -19,6 +20,11 @@
   font-size: 25px;
 }
 .level{
+  text-align: center;
+  font-family: "Courier New";
+  font-size: 25px;
+}
+.avoided{
   text-align: center;
   font-family: "Courier New";
   font-size: 25px;
@@ -162,6 +168,7 @@ function updateFrames() {
   }
   document.getElementById("score").innerHTML = score;
   document.getElementById("level").innerHTML = level;
+  document.getElementById("avoided").innerHTML = avoidedObs;
   spawnerCoolDown--;
   if (spawnerCoolDown <= 0) {
     spawnObstacle();
