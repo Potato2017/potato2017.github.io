@@ -168,7 +168,7 @@ function updateFrames() {
     obstacles[i].x -= scrollSpeed;
     if (obstacles[i].x < 0) {
       obstacles.splice(i, 1);
-      score += difficulty;
+      score += 3-difficulty;
     }
     if (obstacles[i].x <= player.x + 20 &&
         obstacles[i].x + obstacles[i].width >= player.x &&
