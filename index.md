@@ -16,5 +16,8 @@
 <form action="https://potato2017.github.io/countdown">
 <button type="submit">Countdown</button>
 </form>
+<form action="https://potato2017.github.io/the_game">
+<button type="submit">The Game</button>
+</form>
 </body>
 </html>
