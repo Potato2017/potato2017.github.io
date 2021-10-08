@@ -51,6 +51,7 @@ var levelSevenDone = false;
 var levelEightDone = false;
 var levelNineDone = false;
 var yVel = 0;
+var difficulty = 0;
 window.setInterval(update, 10);
 var player = {x: 100, y: groundLevel - 20};
 function update() {
@@ -74,15 +75,32 @@ function drawStart() {
   levelNineDone = false;
   scrollSpeed = 1;
   ctx.font = "25px Courier New";
-  ctx.fillText('Press "a" to start', 10, 25);
+  ctx.fillText('Press 1 for difficulty 1, 2 for difficulty 2, or 3 for difficulty 3', 10, 25);
 }
 window.onkeyup = function() {
-  if (gameOver && event.key == "a") {
+  if (gameOver && event.key == "1") {
     gameOver = false; //test if game is over
     obstacles=[];
     drawBackground();
     player.y = groundLevel - 20;
     player.x = 100;
+    difficulty = 1;
+  }
+  if (gameOver && event.key == "2") {
+    gameOver = false; //test if game is over
+    obstacles=[];
+    drawBackground();
+    player.y = groundLevel - 20;
+    player.x = 100;
+    difficulty = 2;
+  }
+  if (gameOver && event.key == "3") {
+    gameOver = false; //test if game is over
+    obstacles=[];
+    drawBackground();
+    player.y = groundLevel - 20;
+    player.x = 100;
+    difficulty = 3;
   }
 };
 window.onkeydown = function() {
@@ -90,7 +108,7 @@ window.onkeydown = function() {
     yVel = -4;
   }
 }
-var spawnerCoolDown = 120/scrollSpeed;
+var spawnerCoolDown = 0;
 function updateFrames() {
   drawBackground();
   drawObstacles();
@@ -150,7 +168,7 @@ function updateFrames() {
     obstacles[i].x -= scrollSpeed;
     if (obstacles[i].x < 0) {
       obstacles.splice(i, 1);
-      score++;
+      score += difficulty;
     }
     if (obstacles[i].x <= player.x + 20 &&
         obstacles[i].x + obstacles[i].width >= player.x &&
@@ -190,7 +208,7 @@ function spawnObstacle() {
     height: Math.floor(Math.random() * 50)+50
   };
   obstacles.push(obstacle);
-  spawnerCoolDown = 120/scrollSpeed;
+  spawnerCoolDown = difficulty*60/scrollSpeed+60/scrollSpeed;
 }
 function drawObstacles() {
   for (var i = 0; i < obstacles.length; i+=1) {
