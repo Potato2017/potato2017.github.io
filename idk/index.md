@@ -42,6 +42,21 @@
     background-color: #4CAF50;
     color: white;
 }
+.farmbutton{
+    text-align: center;
+    font-family: "Courier New";
+    font-size: 25px;
+    transition-duration: 0.5s;
+    background-color: black;
+    color: white;
+}
+.farmbutton:hover{
+    text-align: center;
+    font-family: "Courier New";
+    font-size: 25px;
+    background-color: white;
+    color: black;
+}
 </style>
 <script>
 var potatoes = 0;
