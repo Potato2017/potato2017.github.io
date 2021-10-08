@@ -65,4 +65,5 @@ function update() {
     document.getElementById("price2").innerHTML = Math.round(prices[1]);
     document.getElementById("price3").innerHTML = Math.round(prices[2]);
     document.getElementById("price4").innerHTML = Math.round(prices[3]);
+}
 </script>
