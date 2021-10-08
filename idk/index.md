@@ -72,6 +72,6 @@ function update() {
     document.getElementById("price2").innerHTML = Math.round(prices[1]);
     document.getElementById("price3").innerHTML = Math.round(prices[2]);
     document.getElementById("price4").innerHTML = Math.round(prices[3]);
-    document.getElementById("pps").innerHTML = Math.round(1000 / updateRate * (perFrame[0] + perFrame[1] + perFrame[2] + perFrame[3]));
+    document.getElementById("pps").innerHTML = Math.round(1000 / updateRate * (perFrame[0]*amt[0] + perFrame[1]*amt[1] + perFrame[2]*amt[2] + perFrame[3]*amt[3]));
 }
 </script>
