@@ -27,8 +27,8 @@ var potatoes = 0;
 var farmVal = 1;
 var amts = [0,0,0,0];
 var prices = [10,100,1000,10000];
-var perFrame = [0.05,0.6,5,40]
-window.setInterval(update,10)
+var perFrame = [0.05,0.6,5,40];
+window.setInterval(update,10);
 var farm = function() {
     potatoes += farmVal;
 }
@@ -50,7 +50,7 @@ var potatopeeler = function() {
 }
 function update() {
     for(var i = 0; i < 4; i++) {
-        potatoes += amts[i]*perFrame[i]
+        potatoes += amts[i]*perFrame[i];
     }
     document.getElementById("potatoes").innerHTML = money;
     document.getElementById("price1").innerHTML = prices[0];
