@@ -25,7 +25,7 @@
 .pps{
   text-align: center;
   font-family: "Courier New";
-  font-size: 5px;
+  font-size: 15px;
 }
 </style>
 <script>
