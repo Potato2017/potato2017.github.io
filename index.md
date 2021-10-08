@@ -22,5 +22,8 @@
 <form action="https://potato2017.github.io/idk">
 <button type="submit">idk</button>
 </form>
+<form action="https://discord.gg/3R79bTxMv2">
+<button type="submit">DISCORD</button>
+</form>
 </body>
 </html>
