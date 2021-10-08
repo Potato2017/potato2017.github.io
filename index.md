@@ -19,5 +19,8 @@
 <form action="https://potato2017.github.io/the_game">
 <button type="submit">The Game</button>
 </form>
+<form action="https://potato2017.github.io/idk">
+<button type="submit">idk</button>
+</form>
 </body>
 </html>
