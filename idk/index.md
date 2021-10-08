@@ -33,7 +33,7 @@ var potatoes = 0;
 var farmVal = 1;
 var amt = [0,0,0,0];
 var prices = [10,100,1000,10000];
-const perFrame = [0.01,0.6,2,10];
+const perFrame = [0.01,0.08,0.5,2];
 const updateRate = 10
 window.setInterval(update,updateRate);
 var farm = function() {
