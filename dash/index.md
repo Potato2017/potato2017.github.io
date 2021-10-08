@@ -82,6 +82,7 @@ function drawStart() {
   levelEightDone = false;
   levelNineDone = false;
   scrollSpeed = 1;
+  ctx.fillStyle = "black"
   ctx.font = "25px Courier New";
   ctx.fillText('Press 1 for easy, 2 for medium, or 3 for hard', 10, 25);
 }
