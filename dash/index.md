@@ -39,6 +39,7 @@ var obstacles = [];
 var gameOver = true;
 var groundLevel = canvas.height - 50;
 var score = 0;
+var avoidedObs = 0;
 var level = 1;
 var levelOneDone = false;
 var levelTwoDone = false;
@@ -63,6 +64,7 @@ function update() {
 }
 function drawStart() {
   score = 0;
+  avoidedObs = 0;
   level = 1;
   levelOneDone = false;
   levelTwoDone = false;
@@ -113,47 +115,47 @@ function updateFrames() {
   drawBackground();
   drawObstacles();
   drawPlayer();
-  if (score == 10 && !levelOneDone) {
+  if (avoidedObs == 10 && !levelOneDone) {
     scrollSpeed ++;
     levelOneDone = true;
     level = 2;
   }
-  if (score == 25 && !levelTwoDone) {
+  if (avoidedObs == 25 && !levelTwoDone) {
     scrollSpeed ++;
     levelTwoDone = true;
     level = 3;
   }
-  if (score == 50 && !levelThreeDone) {
+  if (avoidedObs == 50 && !levelThreeDone) {
     scrollSpeed ++;
     levelThreeDone = true;
     level = 4;
   }
-  if (score == 100 && !levelFourDone) {
+  if (avoidedObs == 100 && !levelFourDone) {
     scrollSpeed ++;
     levelFourDone = true;
     level = 5;
   }
-  if (score == 150 && !levelFiveDone) {
+  if (avoidedObs == 150 && !levelFiveDone) {
     scrollSpeed ++;
     levelFiveDone = true;
     level = 6;
   }
-  if (score == 200 && !levelSixDone) {
+  if (avoidedObs == 200 && !levelSixDone) {
     scrollSpeed ++;
     levelSixDone = true;
     level = 7;
   }
-  if (score == 250 && !levelSevenDone) {
+  if (avoidedObs == 250 && !levelSevenDone) {
     scrollSpeed ++;
     levelSevenDone = true;
     level = 8;
   }
-  if (score == 500 && !levelEightDone) {
+  if (avoidedObs == 500 && !levelEightDone) {
     scrollSpeed ++;
     levelEightDone = true;
     level = 9;
   }
-  if (score == 1000 && !levelNineDone) {
+  if (avoidedObs == 1000 && !levelNineDone) {
     scrollSpeed ++;
     levelNineDone = true;
     level = 10;
@@ -168,7 +170,8 @@ function updateFrames() {
     obstacles[i].x -= scrollSpeed;
     if (obstacles[i].x < 0) {
       obstacles.splice(i, 1);
-      score += 4-difficulty;
+      score += level*(4-difficulty);
+      avoidedObs++;
     }
     if (obstacles[i].x <= player.x + 20 &&
         obstacles[i].x + obstacles[i].width >= player.x &&
