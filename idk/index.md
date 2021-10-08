@@ -33,21 +33,29 @@ var farm = function() {
     potatoes += farmVal;
 }
 var farmer = function() {
+    if (potatoes < prices[0]) return;
+    potatoes -= prices[0]
     amts[0]++;
     prices[0]*=1.2;
     prices[0] = Math.round(prices[0] * 100) / 100
 }
 var tractor = function() {
+    if (potatoes < prices[1]) return;
+    potatoes -= prices[1]
     amts[1]++;
     prices[1]*=1.2;
     prices[1] = Math.round(prices[1] * 100) / 100
 }
 var farmmanager = function() {
+    if (potatoes < prices[2]) return;
+    potatoes -= prices[2]
     amts[2]++;
     prices[2]*=1.2;
     prices[2] = Math.round(prices[2] * 100) / 100
 }
 var potatopeeler = function() {
+    if (potatoes < prices[3]) return;
+    potatoes -= prices[3]
     amts[3]++;
     prices[3]*=1.2;
     prices[3] = Math.round(prices[3] * 100) / 100
