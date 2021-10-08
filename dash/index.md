@@ -75,10 +75,10 @@ function drawStart() {
   levelNineDone = false;
   scrollSpeed = 1;
   ctx.font = "25px Courier New";
-  ctx.fillText('Press 1 for difficulty 1, 2 for difficulty 2, or 3 for difficulty 3', 10, 25);
+  ctx.fillText('Press 1 for easy, 2 for medium, or 3 for hard', 10, 25);
 }
 window.onkeyup = function() {
-  if (gameOver && event.key == "1") {
+  if (gameOver && event.key == "3") {
     gameOver = false; //test if game is over
     obstacles=[];
     drawBackground();
@@ -94,7 +94,7 @@ window.onkeyup = function() {
     player.x = 100;
     difficulty = 2;
   }
-  if (gameOver && event.key == "3") {
+  if (gameOver && event.key == "1") {
     gameOver = false; //test if game is over
     obstacles=[];
     drawBackground();
