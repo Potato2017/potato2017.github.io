@@ -35,23 +35,28 @@ var farm = function() {
 var farmer = function() {
     amts[0]++;
     prices[0]*=1.2;
+    prices[0] = Math.round(prices[0] * 100) / 100
 }
 var tractor = function() {
     amts[1]++;
     prices[1]*=1.2;
+    prices[1] = Math.round(prices[1] * 100) / 100
 }
 var farmmanager = function() {
     amts[2]++;
     prices[2]*=1.2;
+    prices[2] = Math.round(prices[2] * 100) / 100
 }
 var potatopeeler = function() {
     amts[3]++;
     prices[3]*=1.2;
+    prices[3] = Math.round(prices[3] * 100) / 100
 }
 function update() {
     for(var i = 0; i < 4; i++) {
         potatoes += amts[i]*perFrame[i];
     }
+    potatoes = Math.round(potatoes * 100) / 100
     document.getElementById("potatoes").innerHTML = potatoes;
     document.getElementById("price1").innerHTML = prices[0];
     document.getElementById("price2").innerHTML = prices[1];
