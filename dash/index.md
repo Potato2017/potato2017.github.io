@@ -176,7 +176,7 @@ function updateFrames() {
   }
   for (var i = 0; i < obstacles.length; i++) { // relocated
     obstacles[i].x -= scrollSpeed;
-    if (obstacles[i].x < 0) {
+    if (obstacles[i].x < -20) {
       obstacles.splice(i, 1);
       score += level*(4-difficulty);
       avoidedObs++;
