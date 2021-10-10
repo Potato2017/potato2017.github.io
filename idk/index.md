@@ -44,4 +44,3 @@
     color: white;
 }
 </style>
-<script src="https://potato2017.github.io/idk/main.js"></script>
