@@ -35,14 +35,6 @@
     background-color: white;
     color: black;
 }
-.button:hover{
-    text-align: center;
-    font-family: "Courier New";
-    font-size: 25px;
-    transition-duration: 0.5s;
-    background-color: green;
-    color: white;
-}
 .farmbutton{
     text-align: center;
     font-family: "Courier New";
@@ -50,14 +42,6 @@
     transition-duration: 0.5s;
     background-color: black;
     color: white;
-}
-.farmbutton:hover{
-    text-align: center;
-    font-family: "Courier New";
-    font-size: 25px;
-    transition-duration: 0.5s;
-    background-color: white;
-    color: black;
 }
 </style>
 <script>
@@ -100,17 +84,13 @@ function update() {
         potatoes += amt[i]*perFrame[i];
     }
     if (potatoes >= prices[0]) document.getElementById("farmer").style.backgroundColor = "#4CAF50";
-    else {document.getElementById("farmer").style.backgroundColor = "white";
-    document.getElementById("farmer").style.color = "black"}
+    else document.getElementById("farmer").style.backgroundColor = "white";
     if (potatoes >= prices[1]) document.getElementById("tractor").style.backgroundColor = "#4CAF50";
-    else {document.getElementById("tractor").style.backgroundColor = "white";
-    document.getElementById("tractor").style.color = "black"}
+    else document.getElementById("tractor").style.backgroundColor = "white";
     if (potatoes >= prices[2]) document.getElementById("farmmanager").style.backgroundColor = "#4CAF50";
-    else {document.getElementById("farmmanager").style.backgroundColor = "white";
-    document.getElementById("farmmanager").style.color = "black"}
+    else document.getElementById("farmmanager").style.backgroundColor = "white";
     if (potatoes >= prices[3]) document.getElementById("potatopeeler").style.backgroundColor = "#4CAF50";
-    else {document.getElementById("potatopeeler").style.backgroundColor = "white";
-    document.getElementById("potatopeeler").style.color = "black"}
+    else document.getElementById("potatopeeler").style.backgroundColor = "white";
     document.getElementById("potatoes").innerHTML = Math.round(potatoes);
     document.getElementById("price1").innerHTML = Math.round(prices[0]);
     document.getElementById("price2").innerHTML = Math.round(prices[1]);
