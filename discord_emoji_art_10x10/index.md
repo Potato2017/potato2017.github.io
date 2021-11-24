@@ -21,7 +21,6 @@ window.setInterval(update, 10);
 function update() {
   drawTop();
   drawSquares();
-  updateOut();
 }
 function drawTop(){
   ctx.fillStyle = colors[currentColor];
@@ -60,7 +59,8 @@ function updateGrid(canvas, event) {
     let y = event.clientY - rect.top;
     if (100 <= x && x <= 400 && 150 <= y && y <= 450) {
         grid[Math.floor((x-100)/30)][Math.floor((y-150)/30)] = colors[currentColor]
-    }
+    }   
+    updateOut();
 }
      
 let canvasElem = document.querySelector("canvas");
