@@ -39,6 +39,7 @@ function updateOut() {
     final = ""
     for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid.length; j++) {
+            final += ":";
             var color = grid[i][j];
             if (color === "black") {
                 final += "black_large_square";
@@ -46,7 +47,9 @@ function updateOut() {
                 final += color;
                 final += "_square";
             }
+            final += ":";
         }
+        final += "\n";
     }
     document.getElementById("out").innerHTML = final;
 
