@@ -38,7 +38,7 @@ function updateGrid(canvas, event) {
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
     if (100 <= x && x <= 400 && 150 <= y && y <= 450) {
-        grid[(x-100)/30][(x-150)/30] = colors[currentColor]
+        grid[(x-100)/30][(y-150)/30] = colors[currentColor]
     }
 }
      
