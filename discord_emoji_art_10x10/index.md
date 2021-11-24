@@ -46,7 +46,7 @@ let canvasElem = document.querySelector("canvas");
           
 canvasElem.addEventListener("mousedown", function(e)
 {
-    getMousePosition(canvasElem, e);
+    updateGrid(canvasElem, e);
 });
 window.onkeydown = function() {
   if (parseInt(event.key) !== NaN){
