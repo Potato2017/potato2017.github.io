@@ -2,7 +2,7 @@
 <form action="https://potato2017.github.io/">
 <button type="submit">Back</button>
 </form>
-<p>Pinned Response Times [hhh:mm]
+Pinned Response Times [hhh:mm]
 1st: hay [000:01]
 2nd: tank engine man [000:54]
 3rd: lizard [000:57]
@@ -27,4 +27,4 @@ hints:
 
 can you decode it?
 people who have decoded it:
-nobody!</p>
+nobody!
