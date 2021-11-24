@@ -4,7 +4,7 @@
 </form>
 <p>0 "black" 1 "blue" 2 "brown" 3 "green" 4 "orange" 5 "purple" 6 "red" 7 "white"</p>
 <canvas id="canvas" width="500" height="500"></canvas>
-<p class=output><span id=out></span></p>
+<textarea id=out></textarea>
 </html>
 
 <script>
