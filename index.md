@@ -22,10 +22,10 @@
 <form action="https://potato2017.github.io/idk">
 <button type="submit">idk</button>
 </form>
-<!-- L EOPHCW WSWCPWF ECZS KTW ILCY -->
-<!-- O TWLC SHCSHCOBP -->
-<!-- L FOBPAW GZCI OF TWLCI -->
-<!-- "T" -->
-<!-- AZZY GOKTOB -->
+<!-- B KRSZVI IQIVSIT KVMQ LAI YBVD -->
+<!-- R AIBV QZVQZVRUS -->
+<!-- B TRUSNI CMVY RT AIBVY -->
+<!-- "A" -->
+<!-- ALLPT://HMZLZ.FI/5XKCFV3QJUQ -->
 </body>
 </html>  
