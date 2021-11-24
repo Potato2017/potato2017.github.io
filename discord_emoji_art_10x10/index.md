@@ -41,10 +41,10 @@ function updateOut() {
 
             final += ":";
             var color = grid[i][j];
-            if (color === "black") {
-                final += "black_large_square";
+            final += color;
+            if (color === "black" || color === "white") {
+                final += "_large_square";
             } else {
-                final += color;
                 final += "_square";
             }
             final += ":";
@@ -72,7 +72,9 @@ canvasElem.addEventListener("mousedown", function(e)
 });
 window.onkeydown = function() {
   if (parseInt(event.key) !== NaN){
-      currentColor = event.key
+      currentColor = event.key;
+  } else {
+      currentColor = 0;
   }
 }
 </script>
