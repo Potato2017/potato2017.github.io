@@ -22,8 +22,10 @@
 <form action="https://potato2017.github.io/idk">
 <button type="submit">idk</button>
 </form>
-<form action="https://discord.gg/3R79bTxMv2">
-<button type="submit">DISCORD</button>
-</form>
+<!-- B KRSZVI IQIVSIT KVMQ LAI YBVD -->
+<!-- R AIBV QZVQZVRUS -->
+<!-- B TRUSNI CMVY RT AIBVY -->
+<!-- "A" -->
+<!-- ALLPT://HMZLZ.FI/5XKCFV3QJUQ -->
 </body>
-</html>
+</html>  
