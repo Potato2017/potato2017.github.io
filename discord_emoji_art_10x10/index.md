@@ -36,8 +36,9 @@ function drawSquares(){
 }
 function updateOut() {
     final = ""
-    for (let i = 0; i < grid.length; i++) {
-        for (let j = 0; j < grid.length; j++) {
+    for (let j = 0; j < grid.length; j++) {
+        for (let i = 0; i < grid.length; i++) {
+
             final += ":";
             var color = grid[i][j];
             if (color === "black") {
