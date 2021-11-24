@@ -4,6 +4,7 @@
 </form>
 <canvas id="canvas" width="500" height="500"></canvas>
 <script>
+window.onload = function() {
 var canvas = document.getElementById("Game");
 ctx = canvas.getContext("2d");
 var colors = ["black","blue","brown","green","orange","purple","red","white"];
@@ -13,6 +14,7 @@ for (let i = 0; i < 10; i++) {
 }
 var currentColor = 0;
 window.setInterval(update, 10);
+}
 function updateFrames() {
   drawTop();
   drawSquares();
