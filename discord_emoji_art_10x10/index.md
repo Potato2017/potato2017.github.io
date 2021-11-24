@@ -71,8 +71,8 @@ canvasElem.addEventListener("mousedown", function(e)
     updateGrid(canvasElem, e);
 });
 window.onkeydown = function() {
-  if (parseInt(event.key) !== NaN){
-      currentColor = event.key;
+  if (event.key == 0 || event.key == 1 event.key == 2 || event.key == 3 || event.key == 4 || event.key == 5 || event.key == 6 || event.key == 7 || event.key == 8){
+      currentColor = parseInt(event.key);
   } else {
       currentColor = 0;
   }
