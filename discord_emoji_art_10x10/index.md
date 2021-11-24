@@ -3,9 +3,12 @@
 <button type="submit">Back</button>
 </form>
 <canvas id="canvas" width="500" height="500"></canvas>
+<p class=out><span id=out></span></p>
+</html>
+
 <script>
-window.onload = function() {
 var canvas = document.getElementById("Game");
+console.log(canvas);
 ctx = canvas.getContext("2d");
 var colors = ["black","blue","brown","green","orange","purple","red","white"];
 var grid = [];
@@ -13,8 +16,8 @@ for (let i = 0; i < 10; i++) {
     grid.push(["black","black","black","black","black","black","black","black","black","black"]);
 }
 var currentColor = 0;
+
 window.setInterval(update, 10);
-}
 function updateFrames() {
   drawTop();
   drawSquares();
@@ -39,7 +42,9 @@ function updateGrid(canvas, event) {
         grid[(x-100)/30][(x-150)/30] = colors[currentColor]
     }
 }
-let canvasElem = document.querySelector("canvas");       
+     
+let canvasElem = document.querySelector("canvas");
+          
 canvasElem.addEventListener("mousedown", function(e)
 {
     getMousePosition(canvasElem, e);
@@ -50,7 +55,3 @@ window.onkeydown = function() {
   }
 }
 </script>
-
-<p class=out><span id=out></span></p>
-</html>
-
