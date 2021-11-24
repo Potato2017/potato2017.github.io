@@ -7,7 +7,7 @@
 </html>
 
 <script>
-var canvas = document.getElementById("Game");
+var canvas = document.getElementById("canvas");
 console.log(canvas);
 ctx = canvas.getContext("2d");
 var colors = ["black","blue","brown","green","orange","purple","red","white"];
