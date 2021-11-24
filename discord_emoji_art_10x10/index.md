@@ -2,7 +2,7 @@
 <form action="https://potato2017.github.io/">
 <button type="submit">Back</button>
 </form>
-<p>0 "black" 1 "blue" 2 "brown" 3 "green" 4 "orange" 5 "purple" 6 "red" 7 "white"</p>
+<p>0 "black" 1 "blue" 2 "brown" 3 "green" 4 "orange" 5 "purple" 6 "red" 7 "white" 8 "yellow"</p>
 <canvas id="canvas" width="500" height="500"></canvas>
 <textarea id=out></textarea>
 </html>
@@ -10,7 +10,7 @@
 <script>
 var canvas = document.getElementById("canvas");
 ctx = canvas.getContext("2d");
-var colors = ["black","blue","brown","green","orange","purple","red","white"];
+var colors = ["black","blue","brown","green","orange","purple","red","white","yellow"];
 var grid = [];
 for (let i = 0; i < 10; i++) {
     grid.push(["black","black","black","black","black","black","black","black","black","black"]);
