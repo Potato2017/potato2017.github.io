@@ -40,7 +40,7 @@ function updateOut() {
     for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid.length; j++) {
             var color = grid[i][j];
-            if (color === black) {
+            if (color === "black") {
                 final += "black_large_square";
             } else {
                 final += color;
