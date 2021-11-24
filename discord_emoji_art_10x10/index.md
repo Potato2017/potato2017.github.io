@@ -2,8 +2,9 @@
 <form action="https://potato2017.github.io/">
 <button type="submit">Back</button>
 </form>
+<p>0 "black" 1 "blue" 2 "brown" 3 "green" 4 "orange" 5 "purple" 6 "red" 7 "white"</p>
 <canvas id="canvas" width="500" height="500"></canvas>
-<p class=out><span id=out></span></p>
+<p class=output><span id=out></span></p>
 </html>
 
 <script>
@@ -20,6 +21,7 @@ window.setInterval(update, 10);
 function update() {
   drawTop();
   drawSquares();
+  updateOut();
 }
 function drawTop(){
   ctx.fillStyle = colors[currentColor];
@@ -32,6 +34,22 @@ function drawSquares(){
             ctx.fillRect(30*i+100, 30*j+150, 30, 30)
         }
     }
+}
+function updateOut() {
+    final = ""
+    for (let i = 0; i < grid.length; i++) {
+        for (let j = 0; j < grid.length; j++) {
+            var color = grid[i][j];
+            if (color === black) {
+                final += "black_large_square";
+            } else {
+                final += color;
+                final += "_square";
+            }
+        }
+    }
+    document.getElementById("out").innerHTML = final;
+
 }
 function updateGrid(canvas, event) {
     let rect = canvas.getBoundingClientRect();
