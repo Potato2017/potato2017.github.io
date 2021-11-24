@@ -22,6 +22,9 @@
 <form action="https://potato2017.github.io/idk">
 <button type="submit">idk</button>
 </form>
+<form action="https://potato2017.github.io/discord_emoji_art_10x10">
+<button type="submit">discord emoji art 10x10</button>
+</form>
 <!-- B KRSZVI IQIVSIT KVMQ LAI YBVD -->
 <!-- R AIBV QZVQZVRUS -->
 <!-- B TRUSNI CMVY RT AIBVY -->
