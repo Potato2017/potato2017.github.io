@@ -1,1 +1,29 @@
-
+<html>
+  <p><span id=mi></span> seconds</p>
+  <p>or</p>
+  <p><span id=s></span> seconds</p>
+  <p>or</p>
+  <p><span id=m></span> minutes</p>
+  <p>or</p>
+  <p><span id=h></span> hours</p>
+  <p>or</p>
+  <p><span id=d></span> days</p>
+</html>
+<script>
+window.setInterval(update, 11);
+  var mi = 1;
+  var s = mi*1000;
+  var m = s*60;
+  var h = m*60;
+  var d = h*24;
+  const da = new Date();
+  const final = 1640419200;
+  function update() {
+    time = final - da.getTime();
+    document.getElementById("mi").innerHTML = time/mi;
+  document.getElementById("s").innerHTML = time/s;
+  document.getElementById("m").innerHTML = time/m;
+  document.getElementById("h").innerHTML = time/h;
+  document.getElementById("d").innerHTML = time/d;
+  }
+</script>
