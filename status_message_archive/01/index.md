@@ -17,7 +17,7 @@ window.setInterval(update, 11);
   var h = m*60;
   var d = h*24;
   const da = new Date();
-  const final = 1640419200;
+  const final = 1640419200000;
   function update() {
     time = final - da.getTime();
     document.getElementById("mi").innerHTML = time/mi;
