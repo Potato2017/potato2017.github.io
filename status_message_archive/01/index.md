@@ -21,10 +21,10 @@
 window.setInterval(update, 11);
   function update() {
     var time = final - da.getTime();
-    document.getElementById("mi").innerHTML = time/mi;
-  document.getElementById("s").innerHTML = time/s;
-  document.getElementById("m").innerHTML = time/m;
-  document.getElementById("h").innerHTML = time/h;
-  document.getElementById("d").innerHTML = time/d;
+    document.getElementById("mi").innerHTML = (time/mi).toString();
+  document.getElementById("s").innerHTML = (time/s).toString();
+  document.getElementById("m").innerHTML = (time/m).toString();
+  document.getElementById("h").innerHTML = (time/h).toString();
+  document.getElementById("d").innerHTML = (time/d).toString();
   }
 </script>
