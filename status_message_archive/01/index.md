@@ -20,7 +20,7 @@
   
 window.setInterval(update, 11);
   function update() {
-    time = final - da.getTime();
+    var time = final - da.getTime();
     document.getElementById("mi").innerHTML = time/mi;
   document.getElementById("s").innerHTML = time/s;
   document.getElementById("m").innerHTML = time/m;
