@@ -1,5 +1,5 @@
 <html>
-  <p><span id=mi></span> seconds</p>
+  <p><span id=mi></span> milliseconds</p>
   <p>or</p>
   <p><span id=s></span> seconds</p>
   <p>or</p>
@@ -10,7 +10,6 @@
   <p><span id=d></span> days</p>
 </html>
 <script>
-window.setInterval(update, 11);
   var mi = 1;
   var s = mi*1000;
   var m = s*60;
@@ -18,6 +17,8 @@ window.setInterval(update, 11);
   var d = h*24;
   const da = new Date();
   const final = 1640419200000;
+  
+window.setInterval(update, 11);
   function update() {
     time = final - da.getTime();
     document.getElementById("mi").innerHTML = time/mi;
