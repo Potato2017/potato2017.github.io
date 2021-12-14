@@ -15,11 +15,11 @@
   var m = s*60;
   var h = m*60;
   var d = h*24;
-  const da = new Date();
   const final = 1640419200000;
   
 window.setInterval(update, 11);
   function update() {
+  const da = new Date();
     var time = final - da.getTime();
     document.getElementById("mi").innerHTML = (time/mi).toString();
   document.getElementById("s").innerHTML = (time/s).toString();
