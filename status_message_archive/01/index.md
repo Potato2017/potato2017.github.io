@@ -1,12 +1,11 @@
 <html>
   <p class=text><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
-  <p class=text><span id=d></span> d <span id=h></span> h <span id=m></span> m <span id=s></span> s <span id=mi></span> ms</p>
 </html>
 <style>
 .text{
   text-align: center;
   font-family: "Courier New";
-  font-size: 15px
+  font-size: 40px
   }
 </style>
 <script>
