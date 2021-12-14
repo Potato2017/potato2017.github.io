@@ -1,11 +1,12 @@
 <html>
-  <p class=text><span id=mi></span> milliseconds = <span id=s></span> seconds = <span id=m></span> minutes = <span id=h></span> hours = <span id=d></span> days</p>
+  <p class=text><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
+  <p class=text><span id=d></span> d <span id=h></span> h <span id=m></span> m <span id=s></span> s <span id=mi></span> ms</p>
 </html>
 <style>
 .text{
   text-align: center;
   font-family: "Courier New";
-  font-size: 25px
+  font-size: 15px
   }
 </style>
 <script>
@@ -20,10 +21,10 @@ window.setInterval(update, 11);
   function update() {
   const da = new Date();
     var time = final - da.getTime();
-    document.getElementById("mi").innerHTML = (time/mi).toString();
-  document.getElementById("s").innerHTML = (time/s).toString();
-  document.getElementById("m").innerHTML = (time/m).toString();
-  document.getElementById("h").innerHTML = (time/h).toString();
-  document.getElementById("d").innerHTML = (time/d).toString();
+    document.getElementById("mi").innerHTML = ((time/mi)%1000).toString();
+  document.getElementById("s").innerHTML = (Math.floor(time/s)%60).toString();
+  document.getElementById("m").innerHTML = (Math.floor(time/m)%60).toString();
+  document.getElementById("h").innerHTML = (Math.floor(time/h)%24).toString();
+  document.getElementById("d").innerHTML = (Math.floor(time/d)).toString();
   }
 </script>
