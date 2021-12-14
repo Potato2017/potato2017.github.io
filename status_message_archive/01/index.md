@@ -1,14 +1,13 @@
 <html>
-  <p><span id=mi></span> milliseconds</p>
-  <p>or</p>
-  <p><span id=s></span> seconds</p>
-  <p>or</p>
-  <p><span id=m></span> minutes</p>
-  <p>or</p>
-  <p><span id=h></span> hours</p>
-  <p>or</p>
-  <p><span id=d></span> days</p>
+  <p class=text><span id=mi></span> milliseconds = <span id=s></span> seconds = <span id=m></span> minutes = <span id=h></span> hours = <span id=d></span> days</p>
 </html>
+<style>
+.text{
+  text-align: center;
+  font-family: "Courier New";
+  font-size: 25px
+  }
+</style>
 <script>
   var mi = 1;
   var s = mi*1000;
