@@ -6,6 +6,6 @@
 <script>
 function go() {
   var x = document.getElementById("num").value;
-  window.location.href = 'https://potato2017.github.io/status_message_archive/' + value;
+  window.location.href = 'https://potato2017.github.io/status_message_archive/' + x;
 }
 </script>
