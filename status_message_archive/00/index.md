@@ -1,7 +1,5 @@
-<p>replace "00" in the url with the number.</p>
-<p>text that i will write will hopefully be there before the countdown is up.</p>
-<p>teams is going bye bye so i sent this early hehe</p>
-<p>please check back later, but the pages are there i guess</p>
+<p>replace "00" in the url with the number. <b>text that i will write will hopefully be there before the countdown is up.</b> teams is going bye bye so i sent this early hehe :) please check back later, but the pages are there i guess</p>
+<p>i'll probably run out of motivation to write these pages but asdhfalksdfjldskjfldskj</p>
 
 <input type="text" id="num" placeholder="enter number here">
 <button onclick="go()">go</button>
