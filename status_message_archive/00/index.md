@@ -1,7 +1,9 @@
 <p>replace "00" in the url with the number.</p>
 <p>text that i will write will hopefully be there before the countdown is up.</p>
+<p>teams is going bye bye so i sent this early hehe</p>
+<p>please check back later, but the pages are there i guess</p>
 
-<input type="text" id="num">
+<input type="text" id="num" placeholder="enter number here">
 <button onclick="go()">go</button>
 <script>
 function go() {
