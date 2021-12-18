@@ -1,5 +1,5 @@
 <html>
-  <p class=text>R I G Y B A G Y H E L L O T H R I F T Y P I A N O hehe you are so good at math and coding. i've known you for uhhh i don't even know how long at this point... 8 years i think lol. you are a very nice and understanding person. you are so good at soccer too. it's incredible what you can do. you are very massive brain. x^2-484x+26800 😳</p>
+  <p class=text>R I G Y B A G Y H E L L O T H R I F T Y P I A N O hehe you are so good at math and coding. i've known you for uhhh i don't even know how long at this point... 8 years i think lol. you are a very nice and understanding person. you are so good at soccer too. it's incredible what you can do. you are very massive brain. x^2-489x+28980 😳</p>
   <p class=text2><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
 </html>
 <style>
