@@ -1,11 +1,16 @@
 <html>
-  <p class=text><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
+  <p class=text>arthur/author/asser ashdflkdsjflksdajf i've known you for like 5 or 6 years now... you're a very nice person. you're a bit weird sometimes but you're always very understanding and compassionate. you always help me when i need help. you are very big brain and insane at coding; <strike>and ur really hot</strike>. you are also a very epic gamer. you are truly an important person to me. im really thankful for youu</p>
+  <p class=text2><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
 </html>
 <style>
 .text{
+  font-family: "Courier New";
+  font-size: 20px
+  }
+.text2{
   text-align: center;
   font-family: "Courier New";
-  font-size: 40px
+  font-size: 20px
   }
 </style>
 <script>
@@ -15,7 +20,6 @@
   var h = m*60;
   var d = h*24;
   const final = 1640419200000;
-  
 window.setInterval(update, 11);
   function update() {
   const da = new Date();

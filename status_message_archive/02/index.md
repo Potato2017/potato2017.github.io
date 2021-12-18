@@ -1,11 +1,16 @@
 <html>
-  <p class=text><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
+  <p class=text>liz the lizard. my favorite lizard from THE magic school bus!! you are a very quirky and cool person. you are also really good at badminton! you are very social and nice. thanks so much for putting up with my "phases" and being such a nice friend in general hehe. i'm sure we're all very thankful for you </p>
+  <p class=text2><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
 </html>
 <style>
 .text{
+  font-family: "Courier New";
+  font-size: 20px
+  }
+.text2{
   text-align: center;
   font-family: "Courier New";
-  font-size: 40px
+  font-size: 20px
   }
 </style>
 <script>
@@ -15,7 +20,6 @@
   var h = m*60;
   var d = h*24;
   const final = 1640419200000;
-  
 window.setInterval(update, 11);
   function update() {
   const da = new Date();
@@ -33,7 +37,7 @@ window.setInterval(update, 11);
   num = (Math.floor(time/m)%60).toString();
   for (var i = 0; i < 2-(Math.floor(time/m)%60).toString().length; i++){
   num = "0" + num
-  }                                                         
+  }                                                      
   document.getElementById("m").innerHTML = num;
   num = (Math.floor(time/h)%24).toString();
   for (var i = 0; i < 2-(Math.floor(time/h)%24).toString().length; i++){

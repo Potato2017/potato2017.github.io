@@ -1,11 +1,16 @@
 <html>
-  <p class=text><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
+  <p class=text>OMG NISHANT NV7 THE ONE AND ONLY VERY HOT NIASHANT MY FAVORITE NIShNAT! thank you so much for being so kind and uhhh inventive i guess. you helped me with geometry hw last year and alg 2 hw this year. thank you so much for developing eode - that was the focus of my life for at least a period of 3 months. thank you so much for everything you do.</p>
+  <p class=text2><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
 </html>
 <style>
 .text{
+  font-family: "Courier New";
+  font-size: 20px
+  }
+.text2{
   text-align: center;
   font-family: "Courier New";
-  font-size: 40px
+  font-size: 20px
   }
 </style>
 <script>
@@ -15,7 +20,6 @@
   var h = m*60;
   var d = h*24;
   const final = 1640419200000;
-  
 window.setInterval(update, 11);
   function update() {
   const da = new Date();

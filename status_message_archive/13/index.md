@@ -1,11 +1,16 @@
 <html>
-  <p class=text><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
+  <p class=text>AY FISHNU MANGOPUDDINGG you are so big brain. it's actually insane how much more work you put into doing things that you are truly passionate about than other people right now. i honestly feel honored to have even met you. thanks for being such a cool and understanding person!</p>
+  <p class=text2><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
 </html>
 <style>
 .text{
+  font-family: "Courier New";
+  font-size: 20px
+  }
+.text2{
   text-align: center;
   font-family: "Courier New";
-  font-size: 40px
+  font-size: 20px
   }
 </style>
 <script>
@@ -15,7 +20,6 @@
   var h = m*60;
   var d = h*24;
   const final = 1640419200000;
-  
 window.setInterval(update, 11);
   function update() {
   const da = new Date();

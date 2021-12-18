@@ -1,11 +1,16 @@
 <html>
-  <p class=text><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
+  <p class=text>omg is that THE VV! no way. you are a very big brain coder. and the GUCCIBIGBOYS company is doing well! thanks so much for being such a nice person. you're very smart. thanks for letting me hug you lol hehe you are a very huggable person! thanks for being such a good friendd</p>
+  <p class=text2><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span></p>
 </html>
 <style>
 .text{
+  font-family: "Courier New";
+  font-size: 20px
+  }
+.text2{
   text-align: center;
   font-family: "Courier New";
-  font-size: 40px
+  font-size: 20px
   }
 </style>
 <script>
@@ -15,7 +20,6 @@
   var h = m*60;
   var d = h*24;
   const final = 1640419200000;
-  
 window.setInterval(update, 11);
   function update() {
   const da = new Date();
@@ -43,3 +47,4 @@ window.setInterval(update, 11);
   document.getElementById("d").innerHTML = (Math.floor(time/d)).toString();
   }
 </script>
+Ve
