@@ -46,12 +46,12 @@ window.setInterval(update, 11);
   }                                                         
   document.getElementById("h").innerHTML = num;
   document.getElementById("d").innerHTML = (Math.floor(time/d)).toString();
-  }
   } else {
     document.getElementById("mi").innerHTML = '000';
     document.getElementById("s").innerHTML = '00';
     document.getElementById("m").innerHTML = '00';
     document.getElementById("h").innerHTML = '00';
     document.getElementById("d").innerHTML = '0';
+  }
   }
 </script>
