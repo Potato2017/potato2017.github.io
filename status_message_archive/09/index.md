@@ -24,6 +24,7 @@ window.setInterval(update, 11);
   function update() {
   const da = new Date();
     var time = final - da.getTime();
+  if (time >= 0) {
   var num = ((time/mi)%1000).toString()
   for (var i = 0; i < 3-((time/mi)%1000).toString().length; i++){
   num = "0" + num
@@ -45,6 +46,12 @@ window.setInterval(update, 11);
   }                                                         
   document.getElementById("h").innerHTML = num;
   document.getElementById("d").innerHTML = (Math.floor(time/d)).toString();
+  } else {
+    document.getElementById("mi").innerHTML = '000';
+    document.getElementById("s").innerHTML = '00';
+    document.getElementById("m").innerHTML = '00';
+    document.getElementById("h").innerHTML = '00';
+    document.getElementById("d").innerHTML = '0';
+  }
   }
 </script>
-Ve
