@@ -4,7 +4,7 @@
 <style>
 .text{
   font-family: "Courier New";
-  font-size: 15px
+  font-size: 25px
   }
 </style>
 <script>
