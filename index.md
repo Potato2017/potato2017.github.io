@@ -28,7 +28,6 @@
 <form action="https://potato2017.github.io/stopwatch">
 <button type="submit">stopwatch</button>
 </form>
-</form>
 <form action="https://potato2017.github.io/knock_off_will_you_snail">
 <button type="submit">knock off will you snail</button>
 </form>
