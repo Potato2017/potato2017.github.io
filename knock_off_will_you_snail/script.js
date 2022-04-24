@@ -13,6 +13,7 @@ var SPAWNFREQ = 40;
 var score = 0;
 var keysDown = {up: false, down: false, left: false, right: false};
 var gameOver = true;
+var instructions = false;
 window.setInterval(update, 10);
 function update() {
     ctx.fillStyle = 'black';
@@ -36,7 +37,21 @@ function update() {
     } else {
         ctx.font = '48px courier';
         ctx.fillStyle = 'black';
-        ctx.fillText('press a to start!', BW, 48);
+        if (!instructions) {
+            ctx.fillText('press a to start!', BW, 48);
+            ctx.fillText('press b for instructions!', BW, 96);
+        } else {
+            ctx.fillText('use the arrow keys to move', BW, 48);
+            ctx.fillText('avoid the', BW, 96);
+            ctx.fillText('the   show where the   will be', BW, 144);
+            ctx.fillText('the game will try to predict you', BW, 192);
+            ctx.fillText('press b to go back!', BW, 240);
+            ctx.fillStyle = 'rgb(255, 0, 0, 1)';
+            ctx.fillRect(300, 60, 40, 40);
+            ctx.fillRect(610, 110, 40, 40);
+            ctx.fillStyle = 'rgb(255, 255, 0, 1)';
+            ctx.fillRect(120, 110, 40, 40);
+        }
     }
 }
 function calcNextPositions() {
@@ -166,4 +181,7 @@ kd.A.down(() => {
         STAYTIME = 150;
         SPAWNFREQ = 40;
     }
-})
+});
+window.onkeydown = function(e) {
+    if (e.key === 'b') instructions = !instructions;
+};
