@@ -119,8 +119,6 @@ function detectLoss() {
             var audio = new Audio('./error.mp3');
             audio.play();
             gameOver = true;
-            console.log(enemy);
-            console.log(player);
         }
     }
 }
