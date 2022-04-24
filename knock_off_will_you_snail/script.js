@@ -119,6 +119,7 @@ function detectLoss() {
             var audio = new Audio('./error.mp3');
             audio.play();
             gameOver = true;
+            instructions = false;
         }
     }
 }
