@@ -154,14 +154,16 @@ kd.RIGHT.up(() => {
     keysDown.right = false;
 });
 kd.A.down(() => {
-    var audio = new Audio('./startup.mp3');
-    audio.play();
-    gameOver = false;
-    score = 0;
-    enemyQueue = [];
-    currEnemies = [];
-    player = {x: canvas.width/2, y: canvas.height/2};
-    SHOWUPTIME = 75;
-    STAYTIME = 150;
-    SPAWNFREQ = 40;
+    if (gameOver) {
+        var audio = new Audio('./startup.mp3');
+        audio.play();
+        gameOver = false;
+        score = 0;
+        enemyQueue = [];
+        currEnemies = [];
+        player = {x: canvas.width/2, y: canvas.height/2};
+        SHOWUPTIME = 75;
+        STAYTIME = 150;
+        SPAWNFREQ = 40;
+    }
 })
