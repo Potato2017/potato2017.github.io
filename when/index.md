@@ -1,5 +1,5 @@
 <html>
-  <p class=text><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span> until i see yall again :(</p>
+  <p class=text><span id=d></span>:<span id=h></span>:<span id=m></span>:<span id=s></span>.<span id=mi></span> until my stupid pfp is gone... thanks a lot lizard</p>
 </html>
 <style>
 .text{
@@ -13,7 +13,7 @@
   var m = s*60;
   var h = m*60;
   var d = h*24;
-  const final = 1650295800000;
+  const final = 1651410331;
 window.setInterval(update, 11);
   function update() {
   const da = new Date();
