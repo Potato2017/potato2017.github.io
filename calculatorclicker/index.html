@@ -65,6 +65,7 @@ var updateCookies = function() {
   setCookie("inc", increment.toString(), 99999);
 }
 var updateText = function() {
+  console.log("e");
   console.log(number);
   document.getElementById("number").innerHTML = `Number: ${number}`;
   document.getElementById("inc").innerHTML = `Increment: ${increment}`;
