@@ -1,0 +1,79 @@
+<html>
+<form action="https://potato2017.github.io/">
+<button type="submit">Back</button>
+</form>
+<button type="button" onclick="press()">CLICK</button>
+<button type="button" onclick="buy()" id="buy">Increment +1 (50 money)</button>
+<p id="number">0</p>
+<p id="tc">Total Clicks: 0</p>
+</html>
+<script>
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+var number = parseInt(getCookie("number"));
+if (number == "") {
+  setCookie("number", "0", 99999);
+  number = 0;
+}
+var totalclicks = parseInt(getCookie("tc"));
+if (totalclicks == "") {
+  setCookie("tc", "0", 99999);
+  totalclicks = 0;
+}
+var increment = parseInt(getCookie("inc"));
+if (increment == "") {
+  setCookie("inc", "1", 99999);
+  increment = 1;
+}
+updateText();
+
+
+var getCost = function(cinc) {
+  return 50*Math.pow(2, cinc-1)
+}
+var press = function() {
+	number += increment;
+  totalclicks++;
+	updateText();
+  updateCookies();
+}
+var updateCookies = function() {
+  setCookie("number", number.toString(), 99999);
+  setCookie("tc", totalclicks.toString(), 99999);
+  setCookie("inc", increment.toString(), 99999);
+}
+var updateText = function() {
+	document.getElementById("number").innerHTML = number;
+  document.getElementById("buy").innerHTML = `Next Increment: ${increment+1} || Cost: ${getCost(increment)}`;
+  document.getElementById("tc").innerHTML = `Total Clicks: ${totalclicks}`;
+}
+var buy = function() {
+	if (money >= getCost(increment)) {
+		money -= getCost(increment);
+		increment++;
+		updateText();
+    updateCookies();
+	}
+}
+</script>
