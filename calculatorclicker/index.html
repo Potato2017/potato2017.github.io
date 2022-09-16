@@ -10,14 +10,14 @@
 </html>
 <script>
 
-function setCookie(cname, cvalue, exdays) {
+var setCookie = function(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function getCookie(cname) {
+var getCookie = function(cname) {
   let name = cname + "=";
   let ca = document.cookie.split(';');
   for(let i = 0; i < ca.length; i++) {
@@ -31,24 +31,6 @@ function getCookie(cname) {
   }
   return "";
 }
-
-var number = parseInt(getCookie("number"));
-if (number == "") {
-  setCookie("number", "0", 99999);
-  number = 0;
-}
-var totalclicks = parseInt(getCookie("tc"));
-if (totalclicks == "") {
-  setCookie("tc", "0", 99999);
-  totalclicks = 0;
-}
-var increment = parseInt(getCookie("inc"));
-if (increment == "") {
-  setCookie("inc", "1", 99999);
-  increment = 1;
-}
-updateText();
-
 
 var getCost = function(cinc) {
   return 50*Math.pow(2, cinc-1)
@@ -80,4 +62,22 @@ var buy = function() {
     updateCookies();
   }
 }
+
+
+var number = parseInt(getCookie("number"));
+if (number == "") {
+  setCookie("number", "0", 99999);
+  number = 0;
+}
+var totalclicks = parseInt(getCookie("tc"));
+if (totalclicks == "") {
+  setCookie("tc", "0", 99999);
+  totalclicks = 0;
+}
+var increment = parseInt(getCookie("inc"));
+if (increment == "") {
+  setCookie("inc", "1", 99999);
+  increment = 1;
+}
+updateText();
 </script>
