@@ -63,21 +63,24 @@ var buy = function() {
 }
 
 
-var number = parseInt(getCookie("number"));
+var number = getCookie("number");
 if (number == "") {
   setCookie("number", "0", 99999);
   number = 0;
   console.log("f")
-}
-var totalclicks = parseInt(getCookie("tc"));
+} else number = parseInt(number);
+  
+var totalclicks = getCookie("tc");
 if (totalclicks == "") {
   setCookie("tc", "0", 99999);
   totalclicks = 0;
-}
-var increment = parseInt(getCookie("inc"));
+} else totalclicks = parseInt(totalclicks);
+  
+var increment = getCookie("inc");
 if (increment == "") {
   setCookie("inc", "1", 99999);
   increment = 1;
-}
+} else increment = parseInt(increment);
+  
 updateText();
 </script>
