@@ -3,8 +3,9 @@
 <button type="submit">Back</button>
 </form>
 <button type="button" onclick="press()">CLICK</button>
-<button type="button" onclick="buy()" id="buy">Increment +1 (50 money)</button>
-<p id="number">0</p>
+<button type="button" onclick="buy()" id="buy">Next Increment: 2 || Cost: 50</button>
+<p id="number">Number: 0</p>
+<p id="inc">Increment: 1</p>
 <p id="tc">Total Clicks: 0</p>
 </html>
 <script>
@@ -53,9 +54,9 @@ var getCost = function(cinc) {
   return 50*Math.pow(2, cinc-1)
 }
 var press = function() {
-	number += increment;
+  number += increment;
   totalclicks++;
-	updateText();
+  updateText();
   updateCookies();
 }
 var updateCookies = function() {
@@ -64,16 +65,17 @@ var updateCookies = function() {
   setCookie("inc", increment.toString(), 99999);
 }
 var updateText = function() {
-	document.getElementById("number").innerHTML = number;
+  document.getElementById("number").innerHTML = `Number: ${number}`;
+  document.getElementById("inc").innerHTML = `Increment: ${increment}`;
   document.getElementById("buy").innerHTML = `Next Increment: ${increment+1} || Cost: ${getCost(increment)}`;
   document.getElementById("tc").innerHTML = `Total Clicks: ${totalclicks}`;
 }
 var buy = function() {
-	if (money >= getCost(increment)) {
-		money -= getCost(increment);
-		increment++;
-		updateText();
+  if (number >= getCost(increment)) {
+    number -= getCost(increment);
+    increment++;
+    updateText();
     updateCookies();
-	}
+  }
 }
 </script>
