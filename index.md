@@ -31,6 +31,9 @@
 <form action="https://potato2017.github.io/knock_off_will_you_snail">
 <button type="submit">knock off will you snail</button>
 </form>
+<form action="https://potato2017.github.io/calculatorclicker">
+<button type="submit">CALCULATOR CLICKER</button>
+</form>
 <!-- B KRSZVI IQIVSIT KVMQ LAI YBVD -->
 <!-- R AIBV QZVQZVRUS -->
 <!-- LAI LMVQIUL MK JIBNMZT XIUMPAMFRB -->
