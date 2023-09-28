@@ -1,0 +1,209 @@
+<html>
+    <p id="timer" class="unselectable">0:00.000</p>
+	<p id="tps" class="unselectable">0 turns, 0 TPS</p>
+	<label for="width">Width:</label>
+	<input type="number" id="width" name="width" value="4" min="1" max="15">
+	<label for="height">Height:</label>
+	<input type="number" id="height" name="height" value="4" min="1" max="15">
+    <button type="submit" id="setdim">Set Dimensions</button>
+	<br>
+	<canvas id="game" class="unselectable" width="400" height="400"></canvas>
+</html>
+<style>
+    .unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+</style>
+<script>
+    var canvas = document.getElementById("game");
+    var gameOver = true;
+    var timerRunning = false;
+    var startTime = 0;
+	var turns = 0;
+    var sizex = 4;
+    var sizey = 4;
+    var WIDTH = canvas.width/sizex;
+    var HEIGHT = canvas.height/sizey;
+    const SHUFFLEMOVES = 1000000;
+    ctx = canvas.getContext("2d");
+	ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.font = "50px courier new";
+    var grid = [];
+    var currentEmpty = [sizex-1, sizey-1];
+    var update = function() {
+		let temp = ctx.font;
+		ctx.font = "30px courier new";
+        ctx.fillStyle = "white";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+		ctx.font = temp;
+        if (!gameOver) {
+            ctx.fillStyle = "black";
+            for (i = 0; i < grid.length; i++) {
+                temp = grid[i];
+                for (j = 0; j < temp.length; j++) {
+                    ctx.strokeRect(j*WIDTH, i*HEIGHT, WIDTH, HEIGHT);
+                    ctx.fillText(temp[j], j*WIDTH+WIDTH/2, i*HEIGHT+HEIGHT/2);
+                }
+            }
+            if (timerRunning) {
+				document.getElementById("timer").innerHTML = millisecondsToTime(Date.now()-startTime);
+				document.getElementById("tps").innerHTML = turns.toString() + " turns, " + (1000*turns/(Date.now()-startTime)).toFixed(2).toString() + " TPS";
+			}
+            if (checkSolved()) {
+                timerRunning = false;
+                gameOver = true;
+            }
+        } else {
+            ctx.fillStyle = "black";
+            ctx.strokeRect(0, 0, canvas.width, canvas.height);
+            ctx.fillText("START", canvas.width/2, canvas.height/2);
+
+        }
+    }
+    var move = function(move, override=false) {
+		turns++;
+        if (gameOver && !override) return;
+        if (!timerRunning && !override) {
+            timerRunning = true;
+			turns = 1;
+            startTime = Date.now();
+        }
+        if (move === "left") {
+            if (currentEmpty[0] !== sizex-1) {
+                currentEmpty[0]++;
+                grid[currentEmpty[1]][currentEmpty[0]-1] = grid[currentEmpty[1]][currentEmpty[0]];
+                grid[currentEmpty[1]][currentEmpty[0]] = "";
+            }
+        }
+        if (move === "right") {
+            if (currentEmpty[0] !== 0) {
+                currentEmpty[0]--;
+                grid[currentEmpty[1]][currentEmpty[0]+1] = grid[currentEmpty[1]][currentEmpty[0]];
+                grid[currentEmpty[1]][currentEmpty[0]] = "";
+            }
+        }
+        if (move === "up") {
+            if (currentEmpty[1] !== sizey-1) {
+                currentEmpty[1]++;
+                grid[currentEmpty[1]-1][currentEmpty[0]] = grid[currentEmpty[1]][currentEmpty[0]];
+                grid[currentEmpty[1]][currentEmpty[0]] = "";
+            }
+        }
+        if (move === "down") {
+            if (currentEmpty[1] !== 0) {
+                currentEmpty[1]--;
+                grid[currentEmpty[1]+1][currentEmpty[0]] = grid[currentEmpty[1]][currentEmpty[0]];
+                grid[currentEmpty[1]][currentEmpty[0]] = "";
+            }
+        }
+    }
+    var getSelectedSquare = function(x, y) {
+        return [Math.floor(x/WIDTH), Math.floor(y/HEIGHT)];
+    }
+    var mouseMove = function(e) {
+        if (!mouseDown) return;
+        let chosenSquare = getSelectedSquare(e.offsetX, e.offsetY);
+        if (chosenSquare[0] === currentEmpty[0] && chosenSquare[1] === currentEmpty[1] || (chosenSquare[0] !== currentEmpty[0] && chosenSquare[1] !== currentEmpty[1])) return;
+        if (chosenSquare[0] === currentEmpty[0]) {
+            if (chosenSquare[1] > currentEmpty[1]) {
+                let squares = chosenSquare[1] - currentEmpty[1];
+                for (i = 0; i < squares; i++) move("up");
+            }
+            if (chosenSquare[1] < currentEmpty[1]) {
+                let squares = currentEmpty[1] - chosenSquare[1];
+                for (i = 0; i < squares; i++) move("down");
+            }
+        }
+        else {
+            if (chosenSquare[0] > currentEmpty[0]) {
+                let squares = chosenSquare[0] - currentEmpty[0]
+                for (i = 0; i < squares; i++) move("left");
+            }
+            if (chosenSquare[0] < currentEmpty[0]) {
+                let squares = currentEmpty[0] - chosenSquare[0]
+                for (i = 0; i < squares; i++) move("right");
+            }
+        }
+    }
+    var shuffle = function() {
+		grid = [];
+	    for (var i = 0; i < sizey; i++) {
+			temp = [];
+			for (var j = 0; j < sizex; j++) {
+				if (!(i === sizey-1 && j === sizex-1)) temp.push(i*sizex+j+1);
+				else temp.push("");
+			}
+			grid.push(temp);
+		}
+		currentEmpty = [sizex-1, sizey-1];
+        for (i = 0; i < SHUFFLEMOVES; i++) {
+            move(["up", "down", "left", "right"][Math.floor(Math.random()*4)], true);
+        }
+    }
+    var checkSolved = function() {
+        let solved = true;
+        for (var i = 0; i < sizey; i++) {
+            for (var j = 0; j < sizex; j++) {
+                if (!(i === sizey-1 && j === sizex-1)) {
+                    if (grid[i][j] !== i*sizex+j+1) solved = false;
+                }
+            }
+        }
+        return solved;
+    }
+    var millisecondsToTime = function(t) {
+        var m = Math.floor(t / 60000).toString();
+        var s = Math.floor((t % 60000) / 1000).toString();
+        var ms = (t % 1000).toString();
+        if (s.length === 1) s = "0" + s;
+        if (ms.length === 1) ms = "00" + ms;
+        if (ms.length === 2) ms = "0" + ms;
+        return m + ":" + s + "." + ms;
+    }
+	var setDimensions = function() {
+		sizex = parseInt(document.getElementById("width").value);
+		sizey = parseInt(document.getElementById("height").value);
+		WIDTH = canvas.width/sizex;
+		HEIGHT = canvas.height/sizey;
+		gameOver = true;
+		timerRunning = false;
+		ctx.font = Math.round(Math.min(WIDTH, HEIGHT)/2).toString() + "px courier new";
+	}
+    canvas.addEventListener("mousemove", mouseMove, false);
+    canvas.addEventListener("touchmove", mouseMove, false);
+    let mouseDown = false;
+    canvas.addEventListener("touchstart", (e) => {
+        mouseDown = true;
+        if (!gameOver) mouseMove(e);
+        else {
+            shuffle();
+            gameOver = !gameOver;
+        }
+    }, false);
+    canvas.addEventListener("touchend", () => {
+        mouseDown = false;
+    }, false);
+    window.onmousedown = (e) => {
+        mouseDown = true;
+        if (!gameOver) mouseMove(e);
+        else {
+            shuffle();
+			turns = 0;
+            gameOver = !gameOver;
+        }
+    }
+    window.onmouseup = () => {
+        mouseDown = false;
+    }
+	window.onkeydown = (e) => {
+		if (e.key === "r") gameOver = true;
+	}
+	document.getElementById("setdim").addEventListener("click", setDimensions);
+    window.setInterval(update, 1);
+</script>
