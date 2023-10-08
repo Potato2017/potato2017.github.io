@@ -1,0 +1,160 @@
+<html>
+    <p class="topTitle">APPLE GAME</p>
+    <p class="paragraph">This is my recreation of the Fruit Box game that can be found <a href="https://en.gamesaien.com/game/fruit_box/">here.</a></p>
+    <div id="canvas-container">
+        <canvas id="game" width="1700" height="1100">no canvas perms :3</canvas>
+    </div>
+</html>
+<style>
+    .topTitle {
+        text-align: center;
+        font-family: "Courier New";
+        font-size: 50px;
+    }
+    .paragraph {
+        text-align: center;
+        font-family: "Courier New";
+        font-size: 25px;
+    }
+    #canvas-container {
+        width: 100%;
+        text-align: center
+    }
+</style>
+<script>
+    var canvas = document.getElementById("game");
+    var ctx = canvas.getContext("2d");
+    var gameOver = true;
+    var startX = 0;
+    var startY = 0;
+    var x = 0;
+    var y = 0;
+    var dragging = false;
+    var apples = []; // apple: {x: x, y: y, num: num}
+    var overApples = [];
+    var currentSum = 0;
+    var startTime = 0;
+    var showScore = false;
+    function update() {
+    drawBackground();
+    if (gameOver) {
+        drawStart();
+    } else {
+        updateFrames();
+    }
+    }
+    window.setInterval(update, 10);
+
+    function drawStart() {
+    ctx.fillStyle = "black";
+    ctx.strokeRect(800, 500, 100, 100);
+    ctx.font = "25px Courier New";
+    ctx.fillText("Start", 813, 555);
+    if (showScore) ctx.fillText(`Score: ${170 - apples.length}`, 500, 500);
+    }
+    function isBetween(num, end1, end2) {
+    return (num >= end1) !== (num >= end2);
+    }
+    function updateFrames() {
+    let timer = new Date().getTime()/1000-startTime;
+    let timeLeft = 120 - timer;
+    ctx.font = "50px Courier New";
+    ctx.fillStyle = "black";
+    ctx.fillText(timeLeft, 0, 1100);
+    ctx.fillText(`Score: ${170 - apples.length}`, 1100, 1100);
+    if (timeLeft < 0) {
+        gameOver = true;
+        showScore = true;
+    }
+    overApples = []
+    ctx.fillStyle = "black"
+    ctx.beginPath();
+    ctx.arc(x, y, 10, 0, 2 * Math.PI, false);
+    ctx.fill();
+    for (var i = 0; i < apples.length; i++) {
+        let apple = apples[i];
+        if (currentSum == 10) ctx.fillStyle = "green";
+        else ctx.fillStyle = "yellow";
+        ctx.font = "50px Courier New";
+        if (dragging && isBetween(apple.x*100+50, startX, x) && isBetween(apple.y*100+50, startY, y)) {
+        ctx.fillRect(apple.x*100, apple.y*100, 100, 100);
+        overApples.push(apple)
+        }
+        ctx.fillStyle = "black"
+        ctx.fillText(apple.num, apple.x*100+50, apple.y*100+50);
+    }
+    currentSum = overApples.reduce((partialSum, a) => partialSum + a.num, 0);
+    }
+    function startGame() {
+    startTime = new Date().getTime()/1000;
+    if (!gameOver) return;
+    gameOver = false;
+    apples = [];
+    for (var i = 0; i < 17; i++) {
+        for (var j = 0; j < 10; j++) {
+        apples.push({"num": Math.floor(Math.random()*9)+1, "x": i, "y": j})
+        }
+    }
+    let applesum = apples.reduce((partialSum, a) => partialSum + a.num, 0);
+    if (applesum % 10 !== 0) {
+        if ((applesum - apples[169].num) % 10 !== 0) {
+        apples[169].num = 10 - ((applesum - apples[169].num) % 10);
+        } else {
+        for (var i = 0; i < apples.length; i++) {
+            if (apples[i].num !== 1) {
+            apples[i].num = apples[i].num - 1;
+            break;
+            }
+        }
+        apples[169].num = 1;
+        }
+    } 
+    applesum = apples.reduce((partialSum, a) => partialSum + a.num, 0);
+    console.log(applesum);
+    }
+    function drawBackground() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, 1700, 1100);
+    ctx.fillStyle = "black";
+    ctx.strokeRect(0, 0, 1700, 1100);
+    }
+    canvas.addEventListener("mousedown", (e) => {
+    startX = e.offsetX;
+    startY = e.offsetY;
+    dragging = true;
+    if (800 <= startX && startX <= 900 && 500 <= startY && startY <= 600) startGame();
+    });
+    canvas.addEventListener("mousemove", (e) => {
+    
+        x = e.offsetX
+        y = e.offsetY
+    if (dragging) {
+        ctx.globalAlpha = 0.1;
+        ctx.fillStyle = "black";
+        ctx.fillRect(startX, startY, x-startX, y-startY);
+        ctx.globalAlpha = 1.0;
+    }
+    
+    });
+
+    window.addEventListener("mouseup", (e) => {
+    dragging = false;
+    startX = 0;
+    startY = 0;
+    if (currentSum == 10) {
+        for (var i = 0; i < overApples.length; i++) {
+        apples = appleRemove(apples, overApples[i])
+        }
+    }
+    })
+
+    function appleRemove(arr, app) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].x === app.x && arr[i].y === app.y) {
+        arr.splice(i, 1)
+        return arr
+        }
+    }
+    return arr
+    }
+</script>

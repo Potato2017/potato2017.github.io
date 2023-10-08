@@ -34,6 +34,9 @@
 <form action="https://potato2017.github.io/calculatorclicker">
 <button type="submit">CALCULATOR CLICKER</button>
 </form>
+<form action="https://potato2017.github.io/tentgame">
+<button type="submit">Tent's Minigames</button>
+</form>
 <!-- B KRSZVI IQIVSIT KVMQ LAI YBVD -->
 <!-- R AIBV QZVQZVRUS -->
 <!-- LAI LMVQIUL MK JIBNMZT XIUMPAMFRB -->
