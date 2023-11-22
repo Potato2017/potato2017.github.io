@@ -1,0 +1,62 @@
+<html>
+	<canvas id="canvas" width="400" height="200"></canvas>
+	<p>Redeemed hints:</p>
+</html>
+<style>
+* {
+	text-align: center;
+	font-size: 20px;
+	font-family: "Courier New";
+}
+</style>
+<script>
+var canvas = document.getElementById("canvas");
+ctx = canvas.getContext("2d");
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+const start = 1700380800000;
+var time = 0;
+var hints = 0;
+const WKSECS = 604800000;
+const REDEEMED = 0;
+var millisecondsToTime = function(t) {
+	var d = Math.floor(t / 86400000).toString()
+	var h = Math.floor((t % 86400000) / 3600000).toString()
+	var m = Math.floor((t % 3600000) / 60000).toString();
+	var s = Math.floor((t % 60000) / 1000).toString();
+	var ms = (t % 1000).toString();
+	if (h.length === 1) h = "0" + h;
+	if (m.length === 1) m = "0" + m;
+	if (s.length === 1) s = "0" + s;
+	if (ms.length === 1) ms = "00" + ms;
+	if (ms.length === 2) ms = "0" + ms;
+	return d + ":" + h + ":" + m + ":" + s + "." + ms;
+}
+var update = function() {
+	time = Date.now() - start;
+	hints = Math.floor(time / WKSECS);
+	let next = WKSECS - time % WKSECS
+	ctx.fillStyle = "yellow";
+	ctx.fillRect(0, 0, 400, 50);
+	if (hints) {
+		ctx.fillStyle = "lime";
+		ctx.fillRect(0, 50, (1-REDEEMED/hints)*400, 50);
+		ctx.fillStyle = "orange";
+		ctx.fillRect((1-REDEEMED/hints)*400, 50, REDEEMED/hints*400, 50);
+	} else {
+		ctx.fillStyle = "lime";
+		ctx.fillRect(0, 50, 400, 50);
+	}
+	ctx.fillStyle = "green";
+	ctx.fillRect(0, 100, (WKSECS - next)/WKSECS*400, 100);
+	ctx.fillStyle = "red";
+	ctx.fillRect((WKSECS - next)/WKSECS*400, 100, next/WKSECS*400, 100);
+	ctx.fillStyle = "black";
+	ctx.font = "30px courier new";
+	ctx.fillText(hints.toString() + " total hints", 200, 25);
+	ctx.font = "24px courier new";
+	ctx.fillText((hints - REDEEMED).toString() + " available, " + REDEEMED.toString() + " redeemed", 200, 75)
+	ctx.fillText(millisecondsToTime(next), 200, 150);
+}
+window.setInterval(update, 1);
+</script>
