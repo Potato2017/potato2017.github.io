@@ -1,6 +1,7 @@
 <html>
 	<canvas id="canvas" width="400" height="200"></canvas>
-	<p>Redeemed hints:</p>
+	<p>Hints:</p>
+	<p>10 = 0</p>
 </html>
 <style>
 * {
@@ -18,7 +19,7 @@ const start = 1700380800000;
 var time = 0;
 var hints = 0;
 const WKSECS = 604800000;
-const REDEEMED = 0;
+const REDEEMED = 1;
 var millisecondsToTime = function(t) {
 	var d = Math.floor(t / 86400000).toString()
 	var h = Math.floor((t % 86400000) / 3600000).toString()
