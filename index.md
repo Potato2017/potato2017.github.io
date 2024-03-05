@@ -37,5 +37,8 @@
 <form action="https://potato2017.github.io/tentgame">
 <button type="submit">Tent's Minigames</button>
 </form>
+<form action="https://potato2017.github.io/nfl_elo_v2>
+<button type="submit">NFL Elo v2</button>
+</form>
 </body>
 </html>  
